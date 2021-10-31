@@ -1,0 +1,28 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id "io.freefair.lombok" version "6.2.0"
+    id 'java'
+}
+
+group 'net.pvytykac'
+version '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
